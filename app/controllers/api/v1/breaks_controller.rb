@@ -1,3 +1,4 @@
+module Api::V1
 class BreaksController < ApplicationController
   before_action :set_break, only: [:show, :update, :destroy]
 
@@ -48,4 +49,5 @@ class BreaksController < ApplicationController
     def break_params
       params.require(:break).permit(:breakdate, :breaktime, :company_id, :manager_id, :employee_id)
     end
+end
 end

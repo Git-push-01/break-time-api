@@ -1,3 +1,4 @@
+module Api::V1
 class ManagersController < ApplicationController
   before_action :set_manager, only: [:show, :update, :destroy]
 
@@ -48,4 +49,5 @@ class ManagersController < ApplicationController
     def manager_params
       params.require(:manager).permit(:managername, :company_id)
     end
+end
 end
