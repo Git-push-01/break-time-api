@@ -10,46 +10,60 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_12_194258) do
+ActiveRecord::Schema.define(version: 2019_02_20_191449) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "breaks", force: :cascade do |t|
     t.date "breakdate"
-    t.time "breaktime"
-    t.bigint "company_id"
-    t.bigint "manager_id"
+    t.time "breaketime"
+    t.bigint "user_id"
     t.bigint "employee_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["company_id"], name: "index_breaks_on_company_id"
     t.index ["employee_id"], name: "index_breaks_on_employee_id"
-    t.index ["manager_id"], name: "index_breaks_on_manager_id"
+    t.index ["user_id"], name: "index_breaks_on_user_id"
   end
 
   create_table "companies", force: :cascade do |t|
     t.string "companyname"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_companies_on_user_id"
   end
 
   create_table "employees", force: :cascade do |t|
     t.string "employeename"
+    t.bigint "user_id"
     t.bigint "company_id"
     t.bigint "manager_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["company_id"], name: "index_employees_on_company_id"
     t.index ["manager_id"], name: "index_employees_on_manager_id"
+    t.index ["user_id"], name: "index_employees_on_user_id"
   end
 
   create_table "managers", force: :cascade do |t|
     t.string "managername"
+    t.bigint "user_id"
     t.bigint "company_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["company_id"], name: "index_managers_on_company_id"
+    t.index ["user_id"], name: "index_managers_on_user_id"
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "password_digest"
+    t.boolean "admin"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "breaks", "employees"
+  add_foreign_key "breaks", "users"
 end

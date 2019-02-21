@@ -1,6 +1,7 @@
 module Api::V1
 
 class CompaniesController < ApplicationController
+  #before_action :authenticate_user
   before_action :set_company, only: [:show, :update, :destroy]
 
   # GET /companies
@@ -48,7 +49,7 @@ class CompaniesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def company_params
-      params.require(:company).permit(:companyname)
+      params.require(:company).permit(:companyname, :user_id)
     end
 end
 end

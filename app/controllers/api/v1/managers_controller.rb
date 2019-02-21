@@ -1,7 +1,9 @@
 module Api::V1
 class ManagersController < ApplicationController
-  before_action :set_manager, only: [:show, :update, :destroy]
-
+  #before_action :authenticate_user, only: [:index, :current, :update]
+  #before_action :authorize_as_admin, only: [:destroy]
+  #before_action :authorize,          only: [:update]
+  before_action :set_company, only: [:show, :update, :destroy]
   # GET /managers
   def index
     @managers = Manager.all
@@ -47,7 +49,7 @@ class ManagersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def manager_params
-      params.require(:manager).permit(:managername, :company_id)
+      params.require(:manager).permit(:managername, :user_id, :company_id)
     end
 end
 end
