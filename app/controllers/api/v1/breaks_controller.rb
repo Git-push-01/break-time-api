@@ -1,6 +1,5 @@
-module Api::V1
+ module Api::V1
 class BreaksController < ApplicationController
-
   before_action :set_break, only: [:show, :update, :destroy]
 
   # GET /breaks
@@ -48,7 +47,7 @@ class BreaksController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def break_params
-      params.require(:break).permit(:breakdate, :breaketime, :user_id, :employee_id)
+      params.require(:break).permit(:breakdate, :breaktime, :user_id, :employee_id)
     end
 end
 end

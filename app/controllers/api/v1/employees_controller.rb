@@ -1,7 +1,8 @@
 module Api::V1
 class EmployeesController < ApplicationController
-  #before_action :authenticate_user
+  
   before_action :set_employee, only: [:show, :update, :destroy]
+
 
   # GET /employees
   def index
