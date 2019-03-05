@@ -2,9 +2,9 @@ class CreateEmployees < ActiveRecord::Migration[5.2]
   def change
     create_table :employees do |t|
       t.string :employeename
-      t.belongs_to :user
-      t.belongs_to :company
-      t.belongs_to :manager
+      t.belongs_to :user, foreign_key: true
+      t.belongs_to :company, foreign_key: true
+      t.belongs_to :manager, foreign_key: true
 
       t.timestamps
     end

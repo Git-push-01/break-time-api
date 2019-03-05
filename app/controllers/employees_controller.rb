@@ -1,8 +1,5 @@
-module Api::V1
 class EmployeesController < ApplicationController
-  
   before_action :set_employee, only: [:show, :update, :destroy]
-
 
   # GET /employees
   def index
@@ -51,5 +48,4 @@ class EmployeesController < ApplicationController
     def employee_params
       params.require(:employee).permit(:employeename, :user_id, :company_id, :manager_id)
     end
-end
 end

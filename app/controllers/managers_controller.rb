@@ -1,7 +1,6 @@
-module Api::V1
 class ManagersController < ApplicationController
-
   before_action :set_manager, only: [:show, :update, :destroy]
+
   # GET /managers
   def index
     @managers = Manager.all
@@ -49,5 +48,4 @@ class ManagersController < ApplicationController
     def manager_params
       params.require(:manager).permit(:managername, :user_id, :company_id)
     end
-end
 end

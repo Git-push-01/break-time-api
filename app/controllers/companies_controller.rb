@@ -1,9 +1,5 @@
-module Api::V1
-
 class CompaniesController < ApplicationController
-
   before_action :set_company, only: [:show, :update, :destroy]
-
 
   # GET /companies
   def index
@@ -52,5 +48,4 @@ class CompaniesController < ApplicationController
     def company_params
       params.require(:company).permit(:companyname, :user_id)
     end
-end
 end
