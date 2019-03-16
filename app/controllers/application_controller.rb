@@ -1,7 +1,7 @@
 
 class ApplicationController < ActionController::API
   #include Knock::Authenticable
-  before_action :authenticate_request
+  
     attr_reader :current_user
 
     include ExceptionHandler

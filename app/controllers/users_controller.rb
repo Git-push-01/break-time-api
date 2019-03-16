@@ -1,6 +1,7 @@
 
  class UsersController < ApplicationController
   # POST /register
+  before_action :authenticate_request
   skip_before_action :authenticate_request, only: %i[login register]
 
  # [...]
