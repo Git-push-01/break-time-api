@@ -6,6 +6,7 @@
 
  # [...]
  def register
+   
       @user = User.create(user_params)
      if @user.save
       response = { message: 'User created successfully'}
