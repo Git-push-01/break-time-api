@@ -1,10 +1,10 @@
 
 class ApplicationController < ActionController::API
   #include Knock::Authenticable
-  
-    attr_reader :current_user
 
-    include ExceptionHandler
+    # attr_reader :current_user
+    #
+    # include ExceptionHandler
 
     # [...]
     private

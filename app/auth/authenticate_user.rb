@@ -3,8 +3,8 @@ class AuthenticateUser
   attr_accessor :name, :email, :password
 
   #this is where parameters are taken when the command is called
-  def initialize(name, email, password)
-    @name = name
+  def initialize(email, password)
+    
     @email = email
     @password = password
   end

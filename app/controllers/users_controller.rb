@@ -3,10 +3,14 @@
   # POST /register
   before_action :authenticate_request
   skip_before_action :authenticate_request, only: %i[login register]
+  attr_reader :current_user
+
+  include ExceptionHandler
+
 
  # [...]
  def register
-   
+
       @user = User.create(user_params)
      if @user.save
       response = { message: 'User created successfully'}
