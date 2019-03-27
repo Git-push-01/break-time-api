@@ -1,11 +1,9 @@
 
  class UsersController < ApplicationController
   # POST /register
-  before_action :authenticate_request
-  skip_before_action :authenticate_request, only: %i[login register]
-  attr_reader :current_user
 
-  include ExceptionHandler
+    before_action :authenticate_request
+      skip_before_action :authenticate_request, only: %i[login register]
 
 
  # [...]
@@ -32,6 +30,7 @@
 
  # [...]
   private
+
 
 
   def user_params

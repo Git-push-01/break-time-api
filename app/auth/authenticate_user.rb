@@ -1,10 +1,10 @@
 class AuthenticateUser
   prepend SimpleCommand
-  attr_accessor :name, :email, :password
+  attr_accessor :email, :password
 
   #this is where parameters are taken when the command is called
   def initialize(email, password)
-    
+
     @email = email
     @password = password
   end
