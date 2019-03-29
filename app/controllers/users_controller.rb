@@ -1,9 +1,10 @@
 
  class UsersController < ApplicationController
   # POST /register
+  
 
-    before_action :authenticate_request
-      skip_before_action :authenticate_request, only: %i[login register]
+     before_action :authenticate_request
+       skip_before_action :authenticate_request, only: %i[login register]
 
 
  # [...]
@@ -34,8 +35,12 @@
 
 
   def user_params
-    params.require(:user).permit(:name, :email, :password)
-      end
+      params.permit(
+        :name,
+        :email,
+        :password
+      )
+    end
 
   def authenticate(email, password)
     command = AuthenticateUser.call(email, password)
