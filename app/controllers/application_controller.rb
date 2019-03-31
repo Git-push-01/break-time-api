@@ -1,10 +1,12 @@
 
 class ApplicationController < ActionController::API
 
+
+
 attr_reader :current_user
 include ExceptionHandler
 
-
+    # [...]
     private
      def authenticate_request
        @current_user = AuthorizeApiRequest.call(request.headers).result
