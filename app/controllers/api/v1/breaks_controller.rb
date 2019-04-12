@@ -1,4 +1,4 @@
-class BreaksController < ApplicationController
+class Api::V1::BreaksController < ApplicationController
   before_action :set_break, only: [:show, :update, :destroy]
 
   # GET /breaks

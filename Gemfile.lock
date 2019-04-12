@@ -1,3 +1,13 @@
+GIT
+  remote: https://github.com/psantos10/knock.git
+  revision: 7fb00e36b8a1db188d2258eb28dbc56441385302
+  branch: master
+  specs:
+    knock (2.0)
+      bcrypt (~> 3.1)
+      jwt (~> 1.5)
+      rails (>= 4.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -65,10 +75,6 @@ GEM
       concurrent-ruby (~> 1.0)
     jsonapi-renderer (0.2.0)
     jwt (1.5.6)
-    knock (2.1.1)
-      bcrypt (~> 3.1)
-      jwt (~> 1.5)
-      rails (>= 4.2)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -125,7 +131,6 @@ GEM
       ffi (~> 1.0)
     rb-readline (0.5.5)
     ruby_dep (1.5.0)
-    simple_command (0.0.9)
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -155,14 +160,13 @@ DEPENDENCIES
   bootsnap (>= 1.1.0)
   byebug
   jwt
-  knock
+  knock!
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
   rack-cors
   rails (~> 5.2.2)
   rb-readline
-  simple_command
   spring
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data
