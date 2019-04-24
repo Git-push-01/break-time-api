@@ -18,7 +18,7 @@ class Api::V1::ManagersController < ApplicationController
     @manager = Manager.new(manager_params)
 
     if @manager.save
-      render json: @manager, status: :created, location: @manager
+      render json: @manager, status: :created, location: api_v1_manager_url(@manager)
     else
       render json: @manager.errors, status: :unprocessable_entity
     end

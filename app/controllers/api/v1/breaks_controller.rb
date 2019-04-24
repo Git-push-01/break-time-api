@@ -18,7 +18,7 @@ class Api::V1::BreaksController < ApplicationController
     @break = Break.new(break_params)
 
     if @break.save
-      render json: @break, status: :created, location: @break
+      render json: @break, status: :created, location: api_v1_break_url(@break)
     else
       render json: @break.errors, status: :unprocessable_entity
     end

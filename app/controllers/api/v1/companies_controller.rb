@@ -18,7 +18,7 @@ class Api::V1::CompaniesController < ApplicationController
     @company = Company.new(company_params)
 
     if @company.save
-      render json: @company, status: :created, location: @company
+      render json: @company, status: :created, location: api_v1_company_url(@company)
     else
       render json: @company.errors, status: :unprocessable_entity
     end

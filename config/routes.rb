@@ -8,9 +8,10 @@ Rails.application.routes.draw do
 
   resources :breaks
   resources :employees
+  
   resources :managers
   resources :companies
-  
+
 
 
 end
