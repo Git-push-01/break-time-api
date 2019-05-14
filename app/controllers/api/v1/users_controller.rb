@@ -20,12 +20,17 @@
         jwt = Auth.encrypt({ user_id: user.id })
         render json: { jwt: jwt, current: user }
       else
-        render json: { error: 'Failed to Log In' }, status: 400
+        render json: { error: 'Invalid Email or Password' }, status: 400
       end
     end
 
     def show
       render json: get_current_user
+    end
+    def destroy
+      session[:user_id] = nil
+      @user = User.find(params[:id])
+      @user.destroy
     end
 
     private

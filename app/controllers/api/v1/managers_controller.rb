@@ -1,5 +1,5 @@
 class Api::V1::ManagersController < ApplicationController
-  before_action :set_manager, only: [:show, :update, :destroy]
+
 
   # GET /managers
   def index

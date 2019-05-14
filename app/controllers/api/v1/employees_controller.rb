@@ -1,5 +1,5 @@
 class Api::V1::EmployeesController < ApplicationController
-  before_action :set_employee, only: [:show, :update, :destroy]
+
 
   # GET /employees
   def index
