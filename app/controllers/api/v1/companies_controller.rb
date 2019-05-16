@@ -3,7 +3,8 @@ class Api::V1::CompaniesController < ApplicationController
 
   # GET /companies
   def index
-    @companies = Company.all
+    @companies = get_current_user.companies
+  
 
     render json: @companies
   end
@@ -35,6 +36,7 @@ class Api::V1::CompaniesController < ApplicationController
 
   # DELETE /companies/1
   def destroy
+    @company = Company.find(params[:id])
     @company.destroy
   end
 

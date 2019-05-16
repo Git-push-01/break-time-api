@@ -3,7 +3,7 @@ class Api::V1::ManagersController < ApplicationController
 
   # GET /managers
   def index
-    @managers = Manager.all
+    @managers = get_current_user.managers
 
     render json: @managers
   end
@@ -35,6 +35,7 @@ class Api::V1::ManagersController < ApplicationController
 
   # DELETE /managers/1
   def destroy
+    @manager = Manager.find(params[:id])
     @manager.destroy
   end
 

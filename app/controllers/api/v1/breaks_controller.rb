@@ -1,16 +1,24 @@
+require "pry"
 class Api::V1::BreaksController < ApplicationController
 
 
   # GET /breaks
+
   def index
-    @breaks = Break.all
+
+    @breaks = get_current_user.managers.map{|manager| manager.breaks }.flatten
+
+
 
     render json: @breaks
+
   end
+
 
   # GET /breaks/1
   def show
     render json: @break
+
   end
 
   # POST /breaks
@@ -35,6 +43,7 @@ class Api::V1::BreaksController < ApplicationController
 
   # DELETE /breaks/1
   def destroy
+    @break = Break.find(params[:id])
     @break.destroy
   end
 

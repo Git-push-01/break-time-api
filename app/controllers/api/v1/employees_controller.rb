@@ -3,7 +3,7 @@ class Api::V1::EmployeesController < ApplicationController
 
   # GET /employees
   def index
-    @employees = Employee.all
+    @employees = get_current_user.employees
 
     render json: @employees
   end
@@ -35,6 +35,8 @@ class Api::V1::EmployeesController < ApplicationController
 
   # DELETE /employees/1
   def destroy
+    @employee = Company.find(params[:id])
+
     @employee.destroy
   end
 
