@@ -37,6 +37,7 @@ class Api::V1::ManagersController < ApplicationController
   def destroy
     @manager = Manager.find(params[:id])
     @manager.destroy
+    render json: @managers
   end
 
   private

@@ -1,9 +1,11 @@
+require "pry"
 class Api::V1::EmployeesController < ApplicationController
 
 
   # GET /employees
   def index
     @employees = get_current_user.employees
+
 
     render json: @employees
   end
@@ -38,6 +40,7 @@ class Api::V1::EmployeesController < ApplicationController
     @employee = Company.find(params[:id])
 
     @employee.destroy
+    render json: @employees
   end
 
   private

@@ -6,7 +6,8 @@ class Api::V1::BreaksController < ApplicationController
 
   def index
 
-    @breaks = get_current_user.managers.map{|manager| manager.breaks }.flatten
+    @breaks = get_current_user.employees.map{|employee| employee.breaks }.flatten
+
 
 
 
@@ -45,6 +46,7 @@ class Api::V1::BreaksController < ApplicationController
   def destroy
     @break = Break.find(params[:id])
     @break.destroy
+    render json: @break
   end
 
   private
@@ -55,6 +57,6 @@ class Api::V1::BreaksController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def break_params
-      params.require(:breaks).permit(:breakdate, :breaketime, :user_id, :employee_id)
+      params.require(:breaks).permit(:breakdate, :breaketime, :breakend, :user_id, :employee_id)
     end
 end

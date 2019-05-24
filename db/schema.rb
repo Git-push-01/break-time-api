@@ -10,18 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_04_221059) do
+ActiveRecord::Schema.define(version: 2019_05_17_230055) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "breaks", force: :cascade do |t|
     t.date "breakdate"
-    t.time "breaketime"
+    t.string "breaketime"
     t.bigint "user_id"
     t.bigint "employee_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "breakend"
     t.index ["employee_id"], name: "index_breaks_on_employee_id"
     t.index ["user_id"], name: "index_breaks_on_user_id"
   end
