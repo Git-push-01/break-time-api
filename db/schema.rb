@@ -65,12 +65,12 @@ ActiveRecord::Schema.define(version: 2019_05_17_230055) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "breaks", "employees"
-  add_foreign_key "breaks", "users"
-  add_foreign_key "companies", "users"
-  add_foreign_key "employees", "companies"
-  add_foreign_key "employees", "managers"
-  add_foreign_key "employees", "users"
-  add_foreign_key "managers", "companies"
-  add_foreign_key "managers", "users"
+  add_foreign_key "breaks", "employees", on_delete: :cascade
+  add_foreign_key "breaks", "users", on_delete: :cascade
+  add_foreign_key "companies", "users", on_delete: :cascade
+  add_foreign_key "employees", "companies", on_delete: :cascade
+  add_foreign_key "employees", "managers", on_delete: :cascade
+  add_foreign_key "employees", "users", on_delete: :cascade
+  add_foreign_key "managers", "companies", on_delete: :cascade
+  add_foreign_key "managers", "users", on_delete: :cascade
 end

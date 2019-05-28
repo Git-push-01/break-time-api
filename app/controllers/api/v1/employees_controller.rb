@@ -37,10 +37,10 @@ class Api::V1::EmployeesController < ApplicationController
 
   # DELETE /employees/1
   def destroy
-    @employee = Company.find(params[:id])
+    @employee = Employee.find(params[:id])
 
     @employee.destroy
-    render json: @employees
+    render json: @employee
   end
 
   private

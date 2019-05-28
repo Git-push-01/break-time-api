@@ -1,10 +1,12 @@
+require "pry"
 class Api::V1::CompaniesController < ApplicationController
 
 
   # GET /companies
   def index
     @companies = get_current_user.companies
-    
+
+
 
 
     render json: @companies
@@ -39,7 +41,7 @@ class Api::V1::CompaniesController < ApplicationController
   def destroy
     @company = Company.find(params[:id])
     @company.destroy
-    render json: @companies
+    render json: @company
   end
 
   private

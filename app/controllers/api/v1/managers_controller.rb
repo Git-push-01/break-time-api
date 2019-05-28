@@ -37,7 +37,7 @@ class Api::V1::ManagersController < ApplicationController
   def destroy
     @manager = Manager.find(params[:id])
     @manager.destroy
-    render json: @managers
+    render json: @manager
   end
 
   private
@@ -46,7 +46,7 @@ class Api::V1::ManagersController < ApplicationController
       @manager = Manager.find(params[:id])
     end
 
-    # Only allow a trusted parameter "white list" through.
+    # Only allow a trusted parameter 
     def manager_params
       params.require(:manager).permit(:managername, :user_id, :company_id)
     end

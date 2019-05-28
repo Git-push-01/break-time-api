@@ -6,7 +6,7 @@ class Api::V1::BreaksController < ApplicationController
 
   def index
 
-    @breaks = get_current_user.employees.map{|employee| employee.breaks }.flatten
+    @breaks = get_current_user.managers.map{|manager| manager.breaks }.flatten
 
 
 
