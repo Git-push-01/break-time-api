@@ -1,4 +1,4 @@
-class Api::V1::ManagersController < ApplicationController
+class ManagersController < ApplicationController
 
 
   # GET /managers
@@ -46,7 +46,7 @@ class Api::V1::ManagersController < ApplicationController
       @manager = Manager.find(params[:id])
     end
 
-    # Only allow a trusted parameter 
+    # Only allow a trusted parameter
     def manager_params
       params.require(:manager).permit(:managername, :user_id, :company_id)
     end

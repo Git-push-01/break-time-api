@@ -1,5 +1,5 @@
 require "pry"
-class Api::V1::EmployeesController < ApplicationController
+class EmployeesController < ApplicationController
 
 
   # GET /employees

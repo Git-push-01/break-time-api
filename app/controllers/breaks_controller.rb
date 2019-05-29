@@ -1,5 +1,5 @@
 require "pry"
-class Api::V1::BreaksController < ApplicationController
+class BreaksController < ApplicationController
 
 
   # GET /breaks
