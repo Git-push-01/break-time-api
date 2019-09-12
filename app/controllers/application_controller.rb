@@ -1,6 +1,6 @@
 
 class ApplicationController < ActionController::API
-  
+
 
 
   def index
@@ -8,7 +8,7 @@ class ApplicationController < ActionController::API
     end
 
     def get_current_user
-      jwt_token = request.headers['HTTP_AUTHORIZATION'] # .gsub('Bearer ', '')
+      jwt_token = request.headers['HTTP_AUTHORIZATION'] 
 
       if jwt_token
         user_info = Auth.decode(jwt_token)
