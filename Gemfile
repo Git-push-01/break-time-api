@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+gem 'lograge'
+gem 'lograge-sql'
 
 ruby '2.3.3'
 gem 'knock', github: 'psantos10/knock', branch: 'master'
