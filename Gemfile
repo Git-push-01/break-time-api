@@ -22,6 +22,7 @@ gem 'puma', '~> 3.11'
 
  gem 'jwt'
  gem 'active_model_serializers'
+
  gem "pry"
 
 
